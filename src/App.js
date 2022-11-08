@@ -1,6 +1,29 @@
 function App() {
   return( 
   <div className="wrapper clear">
+    <div className="overlay">
+      <div className="drawer">
+        <h2 className="mb-30">Корзина</h2>
+
+        <div className="cartItem d-flex align-center mb-20">
+          <div style={{ backgroundImage: 'url(/img/bags/1.jpg)'}} className="cartItemImg"></div>
+          <div className="mr-20 flex">
+            <p className="mb-5">Сумка Shoulder Pouch</p>
+            <b>6 990 руб.</b>
+          </div>
+          <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
+        </div>
+        <div className="cartItem d-flex align-center mb-20">
+          <div style={{ backgroundImage: 'url(/img/bags/2.jpg)'}} className="cartItemImg"></div>
+          <div className="mr-20 flex">
+            <p className="mb-5">Сумка Super Amini Bella</p>
+            <b>10 999 руб.</b>
+          </div>
+          <img className="removeBtn" src="/img/btn-remove.svg" alt="Remove"/>
+        </div>
+
+      </div>
+    </div>
     <header className="d-flex justify-between align-center p-40">
       <div className="d-flex align-center">
       <img width={40} height={40} src="/img/logo.svg" />
@@ -18,11 +41,20 @@ function App() {
       </ul>
     </header>
     <div className="content p-40">
-      <h1 className="mb-40">Все сумки</h1>
+      <div className="d-flex align-center justify-between mb-40">
+        <h1>Все сумки</h1>
+        <div className="search-block d-flex">
+        <img src="/img/search.svg" alt="Search"/>
+        <input placeholder="Поиск..."/>
+        </div>
+      </div>
       <div className="d-flex">    
 
         <div className="card">
-        <img wigth={129} height={198} src="/img/bags/1.jpg" alt="Bags"/>
+        <div className="favorite">
+        <img src="/img/heart.svg" alt="Unliked"/>
+        </div>
+        <img className="image" width={129} height={198} src="/img/bags/1.jpg" alt="Bags"/>
         <h5>Сумка Shoulder Pouch</h5>
         <div className="d-flex justify-between align-center">
           <div className="d-flex flex-column">
@@ -34,49 +66,47 @@ function App() {
           </button>
         </div>
         </div>
-      <div className="card">
-        <img wigth={129} height={198} src="/img/bags/2.jpg" alt="Bags"/>
-        <h5>Сумка Super Amini Bella</h5>
-        <div className="d-flex justify-between align-center">
-          <div className="d-flex flex-column">
-            <span>Цена:</span>
-            <b>10 999 руб.</b>
+        <div className="card">
+          <img className="image" width={129} height={198} src="/img/bags/2.jpg" alt="Bags"/>
+          <h5>Сумка Super Amini Bella</h5>
+          <div className="d-flex justify-between align-center">
+            <div className="d-flex flex-column">
+              <span>Цена:</span>
+              <b>10 999 руб.</b>
+            </div>
+            <button className="button">
+              <img width={11} height={11} src="/img/plus.svg" alt="Plus"/>
+            </button>
           </div>
-          <button className="button">
-            <img width={11} height={11} src="/img/plus.svg" alt="Plus"/>
-          </button>
         </div>
-      </div>
-
-      <div className="card">
-        <img wigth={129} height={198} src="/img/bags/3.jpg" alt="Bags"/>
-        <h5>Сумка Loco из кожи аллигатора</h5>
-        <div className="d-flex justify-between align-center">
-          <div className="d-flex flex-column">
-            <span>Цена:</span>
-            <b>14 100 руб.</b>
+        <div className="card">
+          <img className="image" width={129} height={198} src="/img/bags/3.jpg" alt="Bags"/>
+          <h5>Сумка Loco из кожи аллигатора</h5>
+          <div className="d-flex justify-between align-center">
+            <div className="d-flex flex-column">
+              <span>Цена:</span>
+              <b>14 100 руб.</b>
+            </div>
+            <button className="button">
+              <img width={11} height={11} src="/img/plus.svg" alt="Plus"/>
+            </button>
           </div>
-          <button className="button">
-            <img width={11} height={11} src="/img/plus.svg" alt="Plus"/>
-          </button>
         </div>
-      </div>
-
-      <div className="card">
-        <img wigth={129} height={198} src="/img/bags/4.jpg" alt="Bags"/>
-        <h5>Сумка Prada Re-Edition 2005</h5>
-        <div className="d-flex justify-between align-center">
-          <div className="d-flex flex-column">
-            <span>Цена:</span>
-            <b>25 650 руб.</b>
+        <div className="card">
+          <img className="image" width={129} height={198} src="/img/bags/4.jpg" alt="Bags"/>
+          <h5>Сумка Prada Re-Edition 2005</h5>
+          <div className="d-flex justify-between align-center">
+            <div className="d-flex flex-column">
+              <span>Цена:</span>
+              <b>25 650 руб.</b>
+            </div>
+            <button className="button">
+              <img width={11} height={11} src="/img/plus.svg" alt="Plus"/>
+            </button>
           </div>
-          <button className="button">
-            <img width={11} height={11} src="/img/plus.svg" alt="Plus"/>
-          </button>
         </div>
-      </div>
-      </div>
 
+      </div>
     </div>
   </div>
   );
