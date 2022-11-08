@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: system-ui;
+  font-family: 'Montserrat', system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #d3e8e1;
@@ -24,4 +24,45 @@ header {
   h3,p {
     margin: 0;
   }
+}
+
+.content {
+  h1 {
+    margin: 0;
+  }
+}
+
+.card {
+  border: 1px solid #f3f3f3;
+  padding: 20px;
+  width: 210px;
+  border-radius: 40px;
+  margin-right: 40px;
+
+  span {
+    font-size: 13px;
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }
+
+  h5 {
+    font-weight: 400;
+    font-size: 15px;
+  }
+}
+
+.button {
+  background: #FFFFFF;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 32px;
+  height: 32px;
+  cursor: pointer;
 }
