@@ -10,10 +10,12 @@ const arr = [
 ];
 
 function App() {
+  const [cartOpened, setCartOpened] = React.useState(false);
+
   return( 
   <div className="wrapper clear">
-    <Drawer />
-    <Header />
+    {cartOpened ? <Drawer onClose={() => setCartOpened(false)}/> : null}
+    <Header onClickCart={() => setCartOpened(true)} />
     <div className="content p-40">
       <div className="d-flex align-center justify-between mb-40">
         <h1>Все сумки</h1>
