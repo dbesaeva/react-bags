@@ -14,11 +14,19 @@ function App() {
     axios.get('https://63737c01348e9472990db5c5.mockapi.io/items').then((res) => {
       setItems(res.data);
     });
+    axios.get('https://63737c01348e9472990db5c5.mockapi.io/cart').then((res) => {
+      setCartItems(res.data);
+    });
   }, []);
 
   const onAddToCart = (obj) => {
     axios.post('https://63737c01348e9472990db5c5.mockapi.io/cart', obj);
     setCartItems(prev => [...prev, obj]);
+  }
+
+  const onRemoveItem = (id) => {
+    axios.delete(`https://63737c01348e9472990db5c5.mockapi.io/cart/${id}`);
+    setCartItems(prev => prev.filter(item => item.id !== id));
   }
 
   const onChangeSearchInput = (event) => {
@@ -27,7 +35,7 @@ function App() {
 
   return( 
   <div className="wrapper clear">
-    {cartOpened ? <Drawer items={cartItems} onClose={() => setCartOpened(false)}/> : null}
+    {cartOpened ? <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} /> : null}
     <Header onClickCart={() => setCartOpened(true)} />
     <div className="content p-40">
       <div className="d-flex align-center justify-between mb-40">
