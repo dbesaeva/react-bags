@@ -2,6 +2,7 @@ import Card from "../components/Card";
 
 function Home({
     items, 
+    cartItems,
     searchValue, 
     setSearchValue, 
     onChangeSearchInput, 
@@ -27,11 +28,14 @@ function Home({
             </div>
     
             <div className="d-flex flex-wrap"> 
-                {items.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase())).map((item) => (
+                {items
+                .filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase()))
+                .map((item) => (
                     <Card 
                     key={item.title}
                     onFavorite={onAddToFavorite}
                     onPlus={(obj) => onAddToCart(obj)}
+                    added={cartItems.some(obj => Number(obj.id) === Number(item.id))}
                     {...item} /> 
                 ))}
             </div>
