@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Drawer from './components/Drawer';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
+import Orders from './pages/Orders';
 
 export const AppContext = React.createContext({});
 
@@ -27,6 +28,7 @@ function App() {
       setFavorites(favoritesResponse.data);
       setItems(itemsResponse.data);
     }
+    
     fetchData()
   }, []);
 
@@ -68,7 +70,7 @@ function App() {
   };
 
   return( 
-    <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded, onAddToFavorite, setCartOpened, setCartItems }}>
+    <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded, onAddToFavorite, setCartOpened, setCartItems, }}>
       <div className="wrapper clear">
         {cartOpened ? <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} /> : null}
 
@@ -90,6 +92,7 @@ function App() {
                 />}>
             </Route>
             <Route path="/favorites" element={<Favorites />}></Route>
+            <Route path="/orders" element={<Orders />}></Route>
         </Routes>
       </div>
     </AppContext.Provider>
