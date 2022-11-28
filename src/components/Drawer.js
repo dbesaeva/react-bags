@@ -23,12 +23,13 @@ function Drawer({ onClose, onRemove, items = [] }) {
 
             for (let i = 0; i < cartItems.length; i++) {
                 const item = cartItems[i];
-                await axios.delete('https://63737c01348e9472990db5c5.mockapi.io/cart' + item.id);
+                await axios.delete(`https://63737c01348e9472990db5c5.mockapi.io/cart/${item.id}`); 
                 await delay(1000);
             }
 
         } catch (error) {
             alert('Не удалось создать заказ :(');
+            console.error(error);
         }
         setIsLoading(false);
     }
@@ -82,8 +83,6 @@ function Drawer({ onClose, onRemove, items = [] }) {
                         description={isOrderComplete ? `Ваш заказ #${orderId} скоро будет передан курьеру` : "Добавьте хотя бы одну сумку, чтобы сделать заказ"}
                         image={isOrderComplete ? "/img/complete-order.png" : "/img/empty-cart.webp"} /> 
                 }
-
-                
             </div> 
         </div>
     );
