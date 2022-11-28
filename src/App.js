@@ -28,7 +28,7 @@ function App() {
       setFavorites(favoritesResponse.data);
       setItems(itemsResponse.data);
     }
-    
+
     fetchData()
   }, []);
 
@@ -70,7 +70,7 @@ function App() {
   };
 
   return( 
-    <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded, onAddToFavorite, setCartOpened, setCartItems, }}>
+    <AppContext.Provider value={{ items, cartItems, favorites, isItemAdded, onAddToFavorite, setCartOpened, setCartItems, onAddToCart }}>
       <div className="wrapper clear">
         {cartOpened ? <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem} /> : null}
 
