@@ -65,7 +65,6 @@ function App() {
     }
   };
 
-
   const onRemoveItem = (id) => {
     try {
       axios.delete(`https://63737c01348e9472990db5c5.mockapi.io/cart/${id}`);
@@ -106,7 +105,7 @@ function App() {
 
         <Routes>
             <Route
-              path='/'
+              path=''
               element={
                 <Home
                   items={items}
@@ -119,8 +118,8 @@ function App() {
                   isLoading={isLoading}
                 />}>
             </Route>
-            <Route path="/favorites" element={<Favorites />}></Route>
-            <Route path="/orders" element={<Orders />}></Route>
+            <Route path="favorites" element={<Favorites />}></Route>
+            <Route path="orders" element={<Orders />}></Route>
         </Routes>
       </div>
     </AppContext.Provider>
