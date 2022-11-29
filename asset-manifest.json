@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-bags/static/css/main.0dc97481.css",
-    "main.js": "/react-bags/static/js/main.ff494dbc.js",
+    "main.js": "/react-bags/static/js/main.432a7814.js",
     "index.html": "/react-bags/index.html",
     "main.0dc97481.css.map": "/react-bags/static/css/main.0dc97481.css.map",
-    "main.ff494dbc.js.map": "/react-bags/static/js/main.ff494dbc.js.map"
+    "main.432a7814.js.map": "/react-bags/static/js/main.432a7814.js.map"
   },
   "entrypoints": [
     "static/css/main.0dc97481.css",
-    "static/js/main.ff494dbc.js"
+    "static/js/main.432a7814.js"
   ]
 }
